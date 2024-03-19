@@ -1,0 +1,76 @@
+﻿<Window x:Class="CarApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarApp"
+        xmlns:uc="clr-namespace:CarApp.UserControls"
+        mc:Ignorable="d"
+         Height="892" Width="480" Background="Transparent" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+    <Border Height="892" Width="480" CornerRadius="30">
+        <Border.Background>
+            <RadialGradientBrush GradientOrigin="0,0">
+                <GradientStop Color="#FF1C1D21" Offset="1"/>
+                <GradientStop Color="#272066" Offset="0.13"/>
+            </RadialGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="gridcontrol" Background="Transparent">
+                <uc:BattaryControl x:Name="BatControlG" Visibility="Hidden"/>
+                <uc:CarControl x:Name="CarControlG" Visibility="Visible"/>
+            </Grid>
+            
+            <Border Grid.Row="1" Background="#25282d" CornerRadius="30">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30 0 30 0">
+                    <Border x:Name="catbtn" MouseLeftButtonDown="catbtn_MouseLeftButtonDown" Height="70" Width="70" Background="#5e52d8" CornerRadius="30.5">
+                        <Border   Height="70" Width="70"  CornerRadius="30" Margin="0 0 0 0">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" ShadowDepth="6" Opacity="0.2"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush x:Name="carico" ImageSource="Img/car_en.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Border>
+                    <Border x:Name="battarybtn" Height="70" Width="70" Background="#22252c" CornerRadius="30.5" Margin="30 0 0 0">
+                        <Border  MouseLeftButtonDown="battarybtn_MouseLeftButtonDown"  Height="70" Width="70"  CornerRadius="30" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" ShadowDepth="6" Opacity="0.2"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush x:Name="battaryico"  ImageSource="Img/bat_def.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Border>
+                    <Border x:Name="climatebtn" Height="70" Width="70" Background="#22252c" CornerRadius="30.5" Margin="30 0 0 0">
+                        <Border  MouseLeftButtonDown="climatebtn_MouseLeftButtonDown"  Height="70" Width="70"  CornerRadius="30" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" ShadowDepth="6" Opacity="0.2"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush x:Name="climatico" ImageSource="Img/climat_def.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Border>
+                 
+                    <Border Height="70" Width="70" Background="#22252c" CornerRadius="30.5" Margin="30 0 0 0">
+                        <Border  Height="70" Width="70"  CornerRadius="30" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" ShadowDepth="6" Opacity="0.2"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush  ImageSource="Img/car_def.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+
+        </Grid>
+    </Border>
+</Window>

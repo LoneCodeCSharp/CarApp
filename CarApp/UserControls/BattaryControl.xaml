@@ -1,0 +1,157 @@
+﻿<UserControl x:Class="CarApp.UserControls.BattaryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CarApp.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="892" d:DesignWidth="480">
+    <Border Height="892" Width="480" CornerRadius="30">
+        <Border.Background>
+            <RadialGradientBrush GradientOrigin="0,0">
+                <GradientStop Color="#FF1C1D21" Offset="1"/>
+                <GradientStop Color="#272066" Offset="0.13"/>
+            </RadialGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110"/>
+                <RowDefinition/>
+                <RowDefinition Height="320"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 30 0 0" >
+                <TextBlock Text="Charge" FontSize="45" Foreground="White" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <Grid Grid.Row="1">
+                <Ellipse Width="350" Height="350" Fill="#0b091c"/>
+                <Ellipse Width="290" Height="290" Fill="#363260"/>
+                <Border Width="290" Height="290">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/circ1.png"/>
+                    </Border.Background>
+                </Border>
+                <Border Width="200" Height="200" CornerRadius="100" Background="#0b091c">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 30">
+                        <Image Height="45" Width="45" Source="Img/th.png" />
+                        <TextBlock Text="397" FontSize="50" Foreground="White" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+                        <TextBlock Text="Km" FontSize="25" Foreground="Gray" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Width="180" Height="285" CornerRadius="15" Background="#191a1e">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="Battary" Foreground="White" FontSize="15" FontWeight="DemiBold" Margin="5"/>
+                        <Border Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="180" Height="180">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Img/charge.png"/>
+                            </Border.Background>
+                            <Grid>
+                                <Border Width="75" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 11 " CornerRadius="6" Height="100" >
+                                    <Border.Background>
+                                        <LinearGradientBrush >
+                                            <GradientStop Color="#372f8c" Offset="1"/>
+                                            <GradientStop Color="#56b3e8" Offset="0.13"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+
+                                </Border>
+                                <TextBlock Text="80%" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="DemiBold" Foreground="White"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="1"  Width="180" Height="130" CornerRadius="15" Background="#5e52d8">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="65"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10 0 0 0">
+                            <TextBlock Text="Cable" Foreground="White" FontSize="25" FontWeight="DemiBold" />
+                            <TextBlock Text="Locked"  Foreground="White" FontSize="15" Margin="0 10 0 0"/>
+                        </StackPanel>
+                        <Border Grid.Column="1" Background="White" Height="80" Width="40" CornerRadius="20" />
+                        <Border Grid.Column="1" x:Name="btn2" Background="#5e52d8" CornerRadius="17" Width="35" Height="35" Margin="0,0,0,35"/>
+
+                    </Grid>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="1"  Width="180" Height="130" CornerRadius="15" Background="#191a1e">
+                    <Grid>
+                        <StackPanel Orientation="Vertical"  Margin="0 0 0 0">
+                            <TextBlock Text="Current" Foreground="White" FontSize="15" FontWeight="DemiBold" Margin="5"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="-"  Foreground="Gray" FontSize="35" Margin="0 0 10 0" VerticalAlignment="Center"/>
+                                <TextBlock Text="25"  Foreground="White" FontSize="55" Margin="0 0 0 0" VerticalAlignment="Center"/>
+                                <TextBlock Text="+"  Foreground="Gray" FontSize="35" Margin="10 0 0 0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <TextBlock Text="A" Foreground="Gray" FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="0 0 0 0 "/>
+                        </StackPanel>
+
+                    </Grid>
+                </Border>
+
+            </Grid>
+            <Border Grid.Row="3" Background="#25282d" CornerRadius="30">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30 0 30 0">
+                    <Border Height="70" Width="70" Background="#22252c" CornerRadius="30.5">
+                        <Border  Height="70" Width="70"  CornerRadius="30" Margin="0 0 0 0">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" ShadowDepth="6" Opacity="0.2"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush  ImageSource="Img/car_def.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Border>
+                    <Border Height="70" Width="70" Background="#22252c" CornerRadius="30.5" Margin="30 0 0 0">
+                        <Border  Height="70" Width="70"  CornerRadius="30" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" ShadowDepth="6" Opacity="0.2"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush  ImageSource="Img/climat_def.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Border>
+                    <Border Height="70" Width="70" Background="#5e52d8" CornerRadius="30.5" Margin="30 0 0 0">
+                        <Border  Height="70" Width="70"  CornerRadius="30" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" ShadowDepth="6" Opacity="0.2"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush  ImageSource="Img/bat_en.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Border>
+                    <Border Height="70" Width="70" Background="#22252c" CornerRadius="30.5" Margin="30 0 0 0">
+                        <Border  Height="70" Width="70"  CornerRadius="30" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" ShadowDepth="6" Opacity="0.2"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush  ImageSource="Img/car_def.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </Border>
+</UserControl>
